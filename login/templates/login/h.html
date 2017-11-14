@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<title>{% block title %}sentiment analysis{% endblock %}</title>
+<link rel="stylesheet" type="text/css" href="{% static 'login/style.css' %}"/>
+
+<center>
+
+    <p style="color:Blue; font-family:Apple Chancery; font-size:60px;">Twitter Sentiment Analysis</p>
+
+<img src="{% static 'b.gif'  %}">
+
+<form method="POST" action="{% url 'feature' %}">
+{% csrf_token %}
+
+    Enter the Text:
+<input type="text" name="textfield">
+
+<button type="submit">Submit</button><br><br>
+    The Given Sentence is:
+
+<input type="text"  value="{{predicted_data}}">
+</form>
+
+
+
+</center>
